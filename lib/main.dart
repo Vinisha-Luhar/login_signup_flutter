@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:login_signup/AnimatedSplashScreen.dart';
 import 'package:login_signup/GradientSplashScreen.dart';
 import 'package:login_signup/LoadingSplashScreen.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const LoadingSplashScreen(),
+      home: const AnimatedSplashScreen(),
     );
   }
 }
