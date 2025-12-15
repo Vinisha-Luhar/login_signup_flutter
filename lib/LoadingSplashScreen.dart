@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:login_signup/HomeScreen.dart';
 import 'package:login_signup/main.dart';
 
 class LoadingSplashScreen extends StatefulWidget {
