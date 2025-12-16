@@ -7,7 +7,7 @@ import 'package:login_signup/AssetSplashScreen.dart';
 import 'package:login_signup/GradientSplashScreen.dart';
 import 'package:login_signup/LoadingSplashScreen.dart';
 import 'package:login_signup/features/counter/mvc/controller/counter_controller.dart';
-import 'package:login_signup/features/counter/mvvm/view/counter_view.dart';
+import 'package:login_signup/features/counter/riverpod_DI_counter/views/counter_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
