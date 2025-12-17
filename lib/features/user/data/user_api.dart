@@ -1,6 +1,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/network/dio_provider.dart';
 import '../model/user_model.dart';
 
 class UserApi{
@@ -8,12 +9,12 @@ class UserApi{
   UserApi(this._dio);
 
   Future<UserModel> fetchUser() async{
-    final response = await _dio.get("https://jsonplaceholder.typicode.com/users/1");
+    final response = await _dio.get("/users/1");
     return UserModel.fromJson(response.data);
   }
 
 }
 
-final dioProvider = Provider((ref) => Dio());
-
-final userApiProvider = Provider((ref) => UserApi(ref.watch(dioProvider)));
+final userApiProvider = Provider<UserApi>((ref) {
+  return UserApi(ref.watch(dioProvider));
+},);

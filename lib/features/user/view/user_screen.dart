@@ -25,7 +25,6 @@ class UserScreen extends ConsumerWidget{
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('ID: ${user.id}'),
                   Text('NAME: ${user.name}'),
                   Text('EMAIL: ${user.email}'),
                 ],

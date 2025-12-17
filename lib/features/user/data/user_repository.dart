@@ -13,4 +13,4 @@ class UserRepository{
   }
 }
 
-final userRepositoryProvider = Provider((ref) => UserRepository(ref.watch(userApiProvider)));
+final userRepositoryProvider = Provider<UserRepository>((ref) => UserRepository(ref.watch(userApiProvider)));
