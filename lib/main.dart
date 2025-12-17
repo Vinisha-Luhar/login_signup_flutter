@@ -8,6 +8,7 @@ import 'package:login_signup/GradientSplashScreen.dart';
 import 'package:login_signup/LoadingSplashScreen.dart';
 import 'package:login_signup/features/counter/mvc/controller/counter_controller.dart';
 import 'package:login_signup/features/counter/riverpod_DI_counter/views/counter_view.dart';
+import 'package:login_signup/features/user/view/user_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       debugShowCheckedModeBanner: false,
-      home: CounterView(),
+      home: UserScreen(),
     );
   }
 }
