@@ -11,6 +11,7 @@ import 'package:login_signup/features/counter/bloc/counter_bloc.dart';
 import 'package:login_signup/features/counter/bloc/screen/counter_screen.dart';
 import 'package:login_signup/features/counter/mvc/controller/counter_controller.dart';
 import 'package:login_signup/features/counter/riverpod_DI_counter/views/counter_view.dart';
+import 'package:login_signup/features/post/view/post_list_screen.dart';
 import 'package:login_signup/features/user/view/user_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -30,9 +31,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       debugShowCheckedModeBanner: false,
-      home: MultiBlocProvider(providers: [
-        BlocProvider(create: (context) => CounterBloc())
-      ], child: CounterScreen()),
+      home: PostListScreen(),
+      // home: MultiBlocProvider(providers: [
+      //   BlocProvider(create: (context) => CounterBloc())
+      // ], child: CounterScreen()),
     );
   }
 }
