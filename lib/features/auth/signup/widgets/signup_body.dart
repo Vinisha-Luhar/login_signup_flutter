@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:login_signup/features/auth/signup/widgets/signup_app_bar.dart';
+import 'package:login_signup/features/auth/signup/widgets/signup_form.dart';
+import 'package:login_signup/features/auth/signup/widgets/signup_header.dart';
 
 class SignupBody extends StatelessWidget {
   const SignupBody({super.key});
@@ -13,6 +16,9 @@ class SignupBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SignupAppBar(),
+              SignupHeader(),
+              SignupForm()
             ],
           ),
         ),
