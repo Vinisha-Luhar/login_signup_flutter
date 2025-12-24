@@ -7,6 +7,7 @@ import 'package:login_signup/AnimatedSplashScreen.dart';
 import 'package:login_signup/AssetSplashScreen.dart';
 import 'package:login_signup/GradientSplashScreen.dart';
 import 'package:login_signup/LoadingSplashScreen.dart';
+import 'package:login_signup/features/auth/signup/view/signup_screen.dart';
 import 'package:login_signup/features/counter/bloc/counter_bloc.dart';
 import 'package:login_signup/features/counter/bloc/screen/counter_screen.dart';
 import 'package:login_signup/features/counter/mvc/controller/counter_controller.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       debugShowCheckedModeBanner: false,
-      home: PostListScreen(),
+      home: SignupScreen(),
       // home: MultiBlocProvider(providers: [
       //   BlocProvider(create: (context) => CounterBloc())
       // ], child: CounterScreen()),
