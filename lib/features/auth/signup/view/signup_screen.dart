@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_signup/features/auth/signup/viewmodel/SignupViewModel.dart';
 import 'package:login_signup/features/auth/signup/widgets/signup_body.dart';
 import 'package:login_signup/features/auth/signup/widgets/signup_form.dart';
+import 'package:provider/provider.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -24,11 +26,14 @@ class SignupScreen extends StatelessWidget {
                   const SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.only(left: 24,right: 24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SignupBody()
-                      ],
+                    child: ChangeNotifierProvider(
+                      create: (context) => SignupViewModel(),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SignupBody()
+                        ],
+                      ),
                     ),
                   )
                 ],

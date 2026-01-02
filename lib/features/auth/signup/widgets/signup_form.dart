@@ -1,11 +1,14 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_signup/core/theme/app_text_styles.dart';
 import 'package:login_signup/core/validator/email_validator.dart';
 import 'package:login_signup/core/validator/username_validator.dart';
 import 'package:login_signup/core/widgets/buttons/primary_button.dart';
 import 'package:login_signup/core/widgets/inputs/app_text_field.dart';
+import 'package:login_signup/core/widgets/inputs/date_picker_field.dart';
+import 'package:login_signup/features/auth/signup/viewmodel/SignupViewModel.dart';
 
 class SignupForm extends StatelessWidget {
   SignupForm({super.key});
@@ -14,6 +17,7 @@ class SignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final viewModel=context.watch<SignupViewModel>();
     return Form(
         key: _formKey,
         child: Column(
@@ -43,8 +47,9 @@ class SignupForm extends StatelessWidget {
 
             ///BirthDate
             Text('Birth of date',style: AppTextStyle.signupTextFieldLabel),
-            AppTextField(
-              hint: 'DD/MM/YYYY',
+            DatePickerField(
+                dateController: viewModel.dobController,
+                onTap: () => viewModel.pickDate(context),
             ),
 
             const SizedBox(height: 16),
