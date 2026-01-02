@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_signup/core/theme/app_text_styles.dart';
+import 'package:login_signup/core/validator/date_validator.dart';
 import 'package:login_signup/core/validator/email_validator.dart';
 import 'package:login_signup/core/validator/username_validator.dart';
 import 'package:login_signup/core/widgets/buttons/primary_button.dart';
@@ -50,6 +51,7 @@ class SignupForm extends StatelessWidget {
             DatePickerField(
                 dateController: viewModel.dobController,
                 onTap: () => viewModel.pickDate(context),
+                dobValidator: () => DateValidator.validateDOB(viewModel.selectedDate),
             ),
 
             const SizedBox(height: 16),

@@ -7,13 +7,14 @@ class SignupViewModel extends ChangeNotifier{
   final TextEditingController dobController= TextEditingController();
   DateTime? _selectedDate;
 
+  DateTime? get selectedDate => _selectedDate;
+
   Future<void> pickDate(BuildContext context)async{
-    final now=DateTime.now();
     final pickedDate=await showDatePicker(
         context: context,
         initialDate: DateTime(2000),
         firstDate: DateTime(1900),
-        lastDate: now
+        lastDate: DateTime.now()
     );
 
     if(pickedDate!=null)

@@ -8,12 +8,14 @@ class DatePickerField extends StatelessWidget {
   final TextEditingController dateController;
   final VoidCallback onTap;
   final String hint;
+  final String? Function()? dobValidator;
 
   const DatePickerField({
     super.key,
     required this.dateController,
     required this.onTap,
-    this.hint='DD/MM/YYYY'
+    this.hint='DD/MM/YYYY',
+    this.dobValidator
   });
 
   @override
@@ -22,6 +24,7 @@ class DatePickerField extends StatelessWidget {
       controller: dateController,
       readOnly: true,
       onTap: onTap,
+      validator: (_) => dobValidator?.call(),
       decoration: AppInputDecoration.build(
           hintText: hint,
         suffixIcon: const Icon(Icons.calendar_today_outlined,size: 16,color: Color(0xFF6C7278),),
